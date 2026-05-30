@@ -11,10 +11,6 @@ public class CustomerController {
     private CustomerService service;
 
     @GetMapping("/")
-    public String greet(){
-        return "Welcome to My world";
-    }
-    @GetMapping("/customer")
     public List<CustomerModel> getData(){
         return service.getData();
     }
