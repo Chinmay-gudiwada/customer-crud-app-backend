@@ -10,7 +10,7 @@ public class CustomerController {
     @Autowired
     private CustomerService service;
 
-    @GetMapping("/")
+    @GetMapping("/customer")
     public List<CustomerModel> getData(){
         return service.getData();
     }
