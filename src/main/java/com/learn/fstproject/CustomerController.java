@@ -1,8 +1,7 @@
 package com.learn.fstproject;
 
-import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +21,9 @@ public class CustomerController {
     public String addCustomer(@RequestBody Customer customer){
         return service.addCustomer(customer);
     }
-    @PutMapping("/customers/{id}")
-    public String updateCustomer(@PathVariable Integer id,@RequestBody Customer customer){
-        customer.setId(id);
+    @PutMapping("/customers/update")
+    public String updateCustomer(@RequestBody Customer customer){
+
         return service.updateCustomer(customer);
     }
     @DeleteMapping("/customers/{id}")
