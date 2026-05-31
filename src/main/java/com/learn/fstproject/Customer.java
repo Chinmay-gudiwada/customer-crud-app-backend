@@ -1,15 +1,20 @@
 package com.learn.fstproject;
 
-public class CustomerModel {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.stereotype.Component;
 
+@Entity
+public class Customer {
+    @Id
     private int id;
     private String name;
     private String phone;
 
-    public CustomerModel() {
+    public Customer() {
     }
 
-    public CustomerModel(int id, String name, String phone) {
+    public Customer(int id, String name, String phone) {
         this.name = name;
         this.id = id;
         this.phone = phone;

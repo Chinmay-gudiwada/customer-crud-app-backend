@@ -8,20 +8,23 @@ import java.util.List;
 @Service
 public class CustomerService {
     @Autowired
-    private CustomerRepo repo;
-    public List<CustomerModel> getData() {
-        return repo.getData();
+    CustomerRepo repo;
+    public List<Customer> getData() {
+        return repo.findAll();
     }
 
-    public String addCustomer(CustomerModel customer) {
-        return repo.addCustomer(customer);
+    public String addCustomer(Customer customer) {
+       repo.save(customer);
+       return "Customer added successfully..";
     }
 
     public String deleteCustomer(Integer id){
-        return  repo.deleteCustomer(id);
+          repo.deleteById(id);
+          return "Customer deleted...";
     }
 
-    public String updateCustomer(CustomerModel customer) {
-        return repo.updateCustomer(customer);
+    public String updateCustomer(Customer customer) {
+         repo.save(customer);
+         return "Customer updated successfully..";
     }
 }
